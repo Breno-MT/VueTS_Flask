@@ -1,9 +1,11 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from sqlalchemy import DateTime, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.extensions import db
+
+BRASILIA_TZ = timezone(timedelta(hours=-3))
 
 
 class Task(db.Model):
@@ -14,7 +16,7 @@ class Task(db.Model):
     done: Mapped[bool] = mapped_column(default=False)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
-        default=lambda: datetime.now(timezone.utc),
+        default=lambda: datetime.now(BRASILIA_TZ),
     )
 
     def to_dict(self) -> dict:
