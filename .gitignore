@@ -1,0 +1,47 @@
+# ---------- Segredos / ambiente ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Python ----------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Banco local (SQLite)
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# ---------- Node / Vue / Vite ----------
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- Editor / SO ----------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.swp
+
+# ---------- Docker (ambientes locais) ----------
+Dockerfile.local
+docker-compose.local.yml
+Dockerfile.development
+docker-compose.development.yml
